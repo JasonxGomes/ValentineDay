@@ -1,35 +1,98 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./styles.css">
-        
+        <style>
+            body {
+                background-color: #ffccf5; /* Light pink background */
+                font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, playful font */
+                text-align: center;
+                color: #ff6699; /* Hello Kitty pink */
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            .container {
+                margin-top: 50px;
+                flex: 1;
+            }
+            .header_text {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+            .gif_container img {
+                max-width: 100%;
+                height: auto;
+                width: 300px; /* Smaller width for the GIF */
+            }
+            .buttons {
+                margin-top: 30px;
+            }
+            .btn {
+                background-color: #ff6699; /* Hello Kitty pink */
+                color: white;
+                border: none;
+                padding: 15px 30px;
+                font-size: 1.2em;
+                cursor: pointer;
+                border-radius: 10px;
+                margin: 10px;
+                transition: background-color 0.3s ease;
+            }
+            .btn:hover {
+                background-color: #ff3385; /* Darker pink on hover */
+            }
+            #noButton {
+                position: absolute;
+            }
+            footer {
+                background-color: #ff6699; /* Hello Kitty pink */
+                color: white;
+                padding: 10px;
+                font-size: 0.9em;
+                margin-top: auto; /* Pushes footer to the bottom */
+            }
+            footer a {
+                color: white;
+                text-decoration: none;
+            }
+            footer a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head> 
     <body>
         <div class="container">
-            <div >
-                <h1 class = "header_text">Oi do you love me?</h1>
+            <div>
+                <h1 class="header_text">Do you love me?</h1>
             </div>
             <div class="gif_container">
-                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+                <!-- Your Hello Kitty GIF -->
+                <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGpoaHd5eXBwOXFuNWNubTV0OWt2dGpnaHNiMGZ1NHE4a2pjOTM3OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jpqwTJ25fA9HzdeS8Z/giphy.gif" alt="Hello Kitty animated illustration">
             </div>
-            <div class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
-                    
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script> 
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="nextPage()">Yes, of course!</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No, sorry!</button>
             </div>
         </div>
-       
+
+        <!-- Footer -->
+        <footer>
+            Made with ❤️ by <a href="https://example.com" target="_blank">Jason Gomes</a> | For Athena🎀
+        </footer>
+
+        <script>
+            function nextPage() {
+                window.location.href = "yes.html";
+            }
+            
+            function moveButton() {
+                var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                document.getElementById('noButton').style.left = `${x}px`;
+                document.getElementById('noButton').style.top = `${y}px`;
+            }
+        </script> 
     </body> 
 </html>
